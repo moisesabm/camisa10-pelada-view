@@ -19,7 +19,7 @@ import avatarCarlos from '../../../assets/avatar-carlos.png';
 import avatarRafael from '../../../assets/avatar-rafael.png';
 import stadiumNeonBg from '../../../assets/stadium_neon_bg.png';
 
-export default function EventWallet({ onBack }) {
+export default function EventWallet({ onBack, onViewCalendar }) {
   const [activeSubTab, setActiveSubTab] = useState('geral');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -179,7 +179,7 @@ export default function EventWallet({ onBack }) {
               {/* Card Sessão Atual */}
               <div className="c10-glass-card" style={{ flex: 1.8 }}>
                 <span className="c10-wallet-card-label-neon" style={{ fontSize: '7.5px' }}>SESSÃO ATUAL</span>
-                <div className="c10-wallet-session-content" onClick={() => alert('Detalhes da Sessão #16')}>
+                <div className="c10-wallet-session-content" onClick={onViewCalendar ? onViewCalendar : () => alert('Detalhes da Sessão #16')}>
                   <div className="c10-wallet-session-icon-box">
                     <IoCalendarOutline size={20} />
                   </div>

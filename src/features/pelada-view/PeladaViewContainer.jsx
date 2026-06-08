@@ -7,6 +7,7 @@ import BottomNavBar from './components/BottomNavBar';
 import PeladaHub from './components/PeladaHub';
 import TeamProfileView from './components/TeamProfileView';
 import EventWallet from './components/EventWallet';
+import EventCalendar from './components/EventCalendar';
 import { 
   IoPlayOutline, 
   IoFileTrayOutline, 
@@ -160,7 +161,9 @@ export default function PeladaViewContainer() {
             <TeamProfileView onBack={() => setView('hub')} />
           </>
         ) : view === 'carteira' ? (
-          <EventWallet onBack={() => setView('teste')} />
+          <EventWallet onBack={() => setView('teste')} onViewCalendar={() => setView('calendario')} />
+        ) : view === 'calendario' ? (
+          <EventCalendar onBack={() => setView('teste')} onViewWallet={() => setView('carteira')} />
         ) : (
           <>
             {/* Imagem de Fundo Fixa */}
@@ -250,7 +253,7 @@ export default function PeladaViewContainer() {
           <SessionCard 
             confirmados={playerCounts.confirmados} 
             total={playerCounts.total} 
-            onProgressClick={() => alert('Abrindo lista de presenças confirmadas')}
+            onProgressClick={() => setView('calendario')}
           />
 
           {/* Card Artilheiros */}
