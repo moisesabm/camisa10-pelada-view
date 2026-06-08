@@ -27,28 +27,6 @@ export default function PeladaHub({ onSelectPelada }) {
       playersCount: 20,
       active: true,
       status: 'Em Produção'
-    },
-    {
-      id: 'domingo',
-      title: 'Pelada de Domingo',
-      subtitle: 'Amigos do Churrasco',
-      bgImage: campoRefletores,
-      date: 'Dom • 09:00',
-      location: 'Arena Gol de Ouro',
-      playersCount: 18,
-      active: false,
-      status: 'Rascunho'
-    },
-    {
-      id: 'firma',
-      title: 'Pelada da Firma',
-      subtitle: 'Futebol & Cerveja',
-      bgImage: campoRefletores,
-      date: 'Qua • 19:30',
-      location: 'Chute Inicial de Pinheiros',
-      playersCount: 22,
-      active: false,
-      status: 'Rascunho'
     }
   ];
 

@@ -553,14 +553,14 @@
 }
 
 .c10-scorers-illust-left {
-  width: 76px;
-  height: 76px;
+  width: 90px;
+  height: 90px;
   background-size: cover;
   background-position: center;
   border: none;
-  /* Corta a imagem em um hexágono perfeito eliminando os cantos pretos da foto */
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  margin-left: -10px; /* Puxa a imagem bem próxima da borda esquerda do card, compensando o padding do container */
+  /* Recorte ajustado com margem de segurança ligeiramente maior para não cortar o brilho verde-lima, especialmente abaixo */
+  clip-path: polygon(50% 5%, 87% 26%, 87% 70%, 50% 91%, 13% 70%, 13% 26%);
+  margin-left: -16px; /* Ajustado de -10px para -16px para compensar a largura maior e manter o alinhamento rente à esquerda */
   transition: transform 0.3s ease;
 }
 
