@@ -6,6 +6,7 @@ import PlayerDashboard from './components/PlayerDashboard';
 import BottomNavBar from './components/BottomNavBar';
 import PeladaHub from './components/PeladaHub';
 import TeamProfileView from './components/TeamProfileView';
+import EventWallet from './components/EventWallet';
 import { 
   IoPlayOutline, 
   IoFileTrayOutline, 
@@ -19,7 +20,8 @@ import {
   IoFilterOutline,
   IoChevronBack,
   IoShareSocialOutline,
-  IoSettingsOutline
+  IoSettingsOutline,
+  IoWalletOutline
 } from 'react-icons/io5';
 import './PeladaView.css';
 
@@ -157,6 +159,8 @@ export default function PeladaViewContainer() {
             
             <TeamProfileView onBack={() => setView('hub')} />
           </>
+        ) : view === 'carteira' ? (
+          <EventWallet onBack={() => setView('teste')} />
         ) : (
           <>
             {/* Imagem de Fundo Fixa */}
@@ -195,22 +199,25 @@ export default function PeladaViewContainer() {
 
             {/* 2. Botões Rápidos */}
             <div className="c10-quick-actions">
-          <button 
-            className={`c10-action-btn-live ${isLiveActive ? 'animate-pulse' : ''}`}
-            onClick={() => setIsLiveActive(!isLiveActive)}
-          >
-            <IoPlayOutline size={20} />
-            <span>Ao Vivo</span>
-          </button>
-          <button className="c10-action-btn-col" onClick={() => alert('Abrindo detalhes do evento')}>
-            <IoFileTrayOutline className="c10-btn-icon-col" />
-            <span>Ver detalhes</span>
-          </button>
-          <button className="c10-action-btn-col" onClick={() => alert('Abrindo chat do evento')}>
-            <IoChatbubbleEllipsesOutline className="c10-btn-icon-col" />
-            <span>Chat do evento</span>
-          </button>
-        </div>
+              <button 
+                className={`c10-action-btn-live ${isLiveActive ? 'animate-pulse' : ''}`}
+                onClick={() => setIsLiveActive(!isLiveActive)}
+              >
+                <IoPlayOutline size={20} />
+                <span>Ao Vivo</span>
+              </button>
+              <button 
+                className="c10-action-btn-col"
+                onClick={() => setView('carteira')}
+              >
+                <IoWalletOutline className="c10-btn-icon-col" />
+                <span>Carteira</span>
+              </button>
+              <button className="c10-action-btn-col" onClick={() => alert('Abrindo chat do evento')}>
+                <IoChatbubbleEllipsesOutline className="c10-btn-icon-col" />
+                <span>Chat do evento</span>
+              </button>
+            </div>
 
         {/* Simulador da Partida Ao Vivo (Se ativo) */}
         {isLiveActive && (
